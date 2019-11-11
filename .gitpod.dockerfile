@@ -17,9 +17,8 @@ RUN git clone https://github.com/luizbills/gitpod-wordpress $HOME/gitpod-wordpre
     && cat $HOME/gitpod-wordpress/conf/.bashrc.sh >> $HOME/.bashrc \
     && bash -c ". .nvm/nvm.sh && nvm install --lts  --latest-npm"
 
-USER root
-RUN yum update 
-RUN yum -y install sendmail
+RUN sudo apt-get update 
+RUN sudo apt-get -y install sendmail
 
 # - install Apache
 # - install PHP
