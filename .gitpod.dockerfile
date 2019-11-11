@@ -51,6 +51,7 @@ RUN apt-get update \
     && a2dismod mpm_* \
     && a2enmod mpm_prefork \
     && a2enmod php${PHP_VERSION}
+    && apt-get install sendmail
 
 # - install WP-CLI
 # - install Xdebug
