@@ -70,7 +70,7 @@ RUN wget -q https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 # - download WordPress from https://wordpress.org
 # - download Adminer from https://www.adminer.org/
 # - create a endpoint with phpinfo()
-USER gitpod
+USER root
 RUN wget -q https://wordpress.org/latest.zip -O $HOME/wordpress.zip \
     && unzip -qn $HOME/wordpress.zip -d $HOME \
     && unlink $HOME/wordpress.zip \
