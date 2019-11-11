@@ -17,6 +17,9 @@ RUN git clone https://github.com/luizbills/gitpod-wordpress $HOME/gitpod-wordpre
     && cat $HOME/gitpod-wordpress/conf/.bashrc.sh >> $HOME/.bashrc \
     && bash -c ". .nvm/nvm.sh && nvm install --lts  --latest-npm"
 
+USER root
+RUN apt-get install sendmail
+
 # - install Apache
 # - install PHP
 USER root
@@ -51,7 +54,6 @@ RUN apt-get update \
     && a2dismod mpm_* \
     && a2enmod mpm_prefork \
     && a2enmod php${PHP_VERSION}
-    && apt-get install sendmail
 
 # - install WP-CLI
 # - install Xdebug
