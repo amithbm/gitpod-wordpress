@@ -11,7 +11,7 @@ ENV APACHE_DOCROOT="public_html"
 # - install WordPress setup scripts
 # - install latest LTS Node.js version
 # - update NPM
-USER gitpod
+USER root
 ADD https://api.github.com/repos/luizbills/gitpod-wordpress/compare/master...HEAD /dev/null
 RUN git clone https://github.com/luizbills/gitpod-wordpress $HOME/gitpod-wordpress \
     && cat $HOME/gitpod-wordpress/conf/.bashrc.sh >> $HOME/.bashrc \
